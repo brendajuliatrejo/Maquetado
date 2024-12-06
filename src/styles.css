@@ -1,0 +1,115 @@
+/* PARA MAQUETAR EL CONTENIDO UTILICÉ GRID */
+
+/* DEFINIENDO LA ALTURA MINIMA DEL BODY  */
+body{
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.grid-item {
+    align-items: center;
+}
+
+/* DEFINIENDO FONT, BORDE, ESPACIO Y CENTRADO DE TODOS LOS ELEMENTOS DEL CONTENEDOR  */
+.grid-container > * {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    align-content: center;
+}
+
+/* ORDENANDO GRID */
+.grid-container{
+    display: grid;
+    gap: 5px; /* separación entre los elementos */
+    grid-template:
+    "navbar navbar" 55px
+    "text1 text1" 30px
+    "text3 text3" 80px
+    "text2 image" 250px
+    "text6 text6" 100px
+    "text4 text4" 150px
+    "text5 text5" 150px / auto 250px;
+    
+    /* GRID NAVBAR  */
+    .nav-app{
+        grid-area: navbar;
+        background-color: rgb(112, 212, 112);
+    }
+
+    /* GRID MENU  */
+    .text-app1{
+        grid-area: text1;
+        background-color: rgb(133, 206, 133);
+    }
+    
+    /* GRID IMAGEN  */
+    .image-app{
+        grid-area: image;
+        background-image: url(img/img2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover; 
+        /* background-color: rgb(106, 187, 106); */
+        
+    }
+
+    /* GRID BOTONES DE DESCARGA  */
+    .text-app2{
+        display: grid;
+        padding: 10px;
+        grid-template-rows: 1fr auto;
+        grid-area: text2;
+        background-color: rgb(96, 158, 96);
+    }
+
+    /* GRID TEXTO APP BANCO AZTECA  */
+    .text-app3{
+        grid-area: text3;
+        background-color: rgb(85, 226, 85);
+    }
+
+    /* GRID TEXTO IZQUIERDO  */
+    .text-app4{
+        grid-area: text4;
+        background-color: rgb(175, 243, 175);
+    }
+
+    /* GRID TEXTO DERECHO  */
+    .text-app5{
+        grid-area: text5;
+        background-color: rgb(53, 136, 53);
+    }
+
+    /* GRID BOTON ABRIR CUENTA  */
+    .text-app6{
+        grid-area: text6;
+        background-color: rgb(132, 236, 132);
+    }
+}
+
+/* Responsive para tablets*/
+@media (min-width:768px) {
+    .grid-container{
+        grid-template: 
+        "navbar navbar navbar" 55px
+        "text1 text1 text1" 30px
+        "text3 image text2" 200px
+        "text4 image text5" 235px
+        "text6 text6 text6" 100px / auto 350px auto;
+    } 
+}
+
+/* Responsive para ordenadores*/
+@media (min-width:992px) {
+.grid-container{
+    grid-template: 
+    "navbar navbar navbar" 55px
+    "text1 text1 text1" 30px
+    "text3 image text2" 210px
+    "text4 image text5" 235px
+    "text6 text6 text6" 90px / auto 400px auto;
+    } 
+}
